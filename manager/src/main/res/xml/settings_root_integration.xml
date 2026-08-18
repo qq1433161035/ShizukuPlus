@@ -4,7 +4,7 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_adb_connection"
-        android:title="ADB Connection"
+        android:title="ADB连接"
         android:defaultValue="true">
 
         <SwitchPreferenceCompat
@@ -32,7 +32,7 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_stock_shizuku_compat"
-        android:title="Stock Shizuku Compatibility"
+        android:title="原版Shizuku兼容性"
         android:defaultValue="true">
 
         <SwitchPreferenceCompat
@@ -52,7 +52,7 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_su_bridge"
-        android:title="SU Bridge Configuration"
+        android:title="SU桥接配置"
         android:defaultValue="true">
 
         <SwitchPreferenceCompat
@@ -64,8 +64,8 @@
 
         <EditTextPreference
             android:key="custom_su_path"
-            android:title="Custom SU Path"
-            android:summary="Set a custom path for the su binary spoofing (e.g., /system/xbin/su). Leave blank for default."
+            android:title="自定义SU路径"
+            android:summary="设置su二进制文件的欺骗路径（例如 /system/xbin/su），留空使用默认路径。"
             android:dependency="su_bridge_enabled"
             android:icon="@drawable/ic_terminal_24"
             app:iconSpaceReserved="true"
@@ -75,7 +75,7 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_root_modules"
-        android:title="Rootless Bridges"
+        android:title="无Root桥接模块"
         android:defaultValue="true">
 
         <Preference
@@ -86,12 +86,12 @@
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="root_build_prop_redirect_enabled"
-            android:title="build.prop Redirection"
-            android:summary="Redirect system build property modifications to a writable proxy file rootless"
+            android:title="build.prop重定向"
+            android:summary="无需Root，将系统build属性修改重定向至可写入代理文件"
             android:icon="@drawable/ic_settings_suggest_24"
             android:defaultValue="false"
-            app:infoTitle="build.prop Redirection Explainer"
-            app:infoDetail="This module automatically shadow-copies the original build.prop to a user-writable path and redirects all writes to it, allowing tweakers to safely modify system values rootless." />
+            app:infoTitle="build.prop重定向说明"
+            app:infoDetail="该模块会自动将原始build.prop影子复制到用户可读写路径，并把全部写入操作重定向到此文件，让调参工具可以在无Root环境安全修改系统参数。" />
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="root_auto_grant_enabled"
@@ -115,17 +115,17 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_ghost_bridge"
-        android:title="Mocking &amp; Simulation"
+        android:title="模拟与伪装"
         android:defaultValue="false">
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="root_iptables_mocking_enabled"
-            android:title="Firewall Success Mocking"
-            android:summary="Intercept and fake success for iptables rules when local netfilter permissions fail"
+            android:title="防火墙执行结果伪装"
+            android:summary="本地Netfilter权限不足时，拦截iptables命令并返回执行成功"
             android:icon="@drawable/ic_shield_24"
             android:defaultValue="false"
-            app:infoTitle="Firewall Mocking Explainer"
-            app:infoDetail="Fakes execution success for iptables commands when rootless limitations prevent real rules from being set, letting firewall apps continue functioning." />
+            app:infoTitle="防火墙伪装说明"
+            app:infoDetail="无Root环境无法真正设置防火墙规则时，伪造iptables命令执行成功，使防火墙类应用可以继续正常运行。" />
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="root_magisk_mocking_enabled"
@@ -147,29 +147,29 @@
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="overlay_fs_proxy_enabled"
-            android:title="OverlayFS System Ghosting"
-            android:summary="[Developer] Seamlessly mount virtual overlay filesystems to simulate rw /system for root apps. Warning: Highly experimental."
+            android:title="OverlayFS系统虚拟挂载"
+            android:summary="[开发者选项] 无缝挂载虚拟Overlay文件系统，为Root应用模拟可读写的 /system 分区。警告：高度实验性功能。"
             android:icon="@drawable/ic_folder_24"
             android:defaultValue="false" />
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="root_kernel_ghosting_enabled"
-            android:title="Kernel Driver Ghosting"
-            android:summary="[Developer] Silently simulate success for insmod/rmmod kernel commands without loading the kernel modules."
+            android:title="内核驱动命令伪装"
+            android:summary="[开发者选项] 对 insmod/rmmod 内核命令静默返回成功，但不会真正加载/卸载内核模块。"
             android:icon="@drawable/ic_settings_suggest_24"
             android:defaultValue="false" />
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="root_partition_ghosting_enabled"
-            android:title="Partition Flash Ghosting"
-            android:summary="[Developer] Intercept and fake 'dd' operations targeting /dev/block/. Prevents ROM flashers from crashing while doing nothing."
+            android:title="分区刷写命令伪装"
+            android:summary="[开发者选项] 拦截针对 /dev/block/ 的 dd 操作，不执行实际刷写，防止刷机工具崩溃。"
             android:icon="@drawable/ic_admin_panel_settings_24"
             android:defaultValue="false" />
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="root_power_ghosting_enabled"
-            android:title="Power State Ghosting"
-            android:summary="[Developer] Intercept reboot, recovery, and soft-reboot commands and silently ignore them to prevent unwanted device restarts."
+            android:title="电源指令伪装"
+            android:summary="[开发者选项] 拦截重启、进入Recovery、软重启命令，静默忽略，避免设备意外重启。"
             android:icon="@drawable/ic_server_restart"
             android:defaultValue="false" />
 
@@ -177,20 +177,20 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_unlocked_bootloader"
-        android:title="Bootloader Integration"
+        android:title="Bootloader集成"
         android:defaultValue="false">
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="bootloader_flash_ota_enabled"
-            android:title="Systemless OTA Flashing"
-            android:summary="Flash OTA payloads to inactive slot without root or custom recovery"
+            android:title="无修改OTA刷写"
+            android:summary="无需Root与第三方Recovery，向备用分区刷写OTA升级包"
             android:icon="@drawable/ic_update_24"
             android:defaultValue="false" />
 
         <af.shizuku.manager.settings.PlusFeaturePreference
             android:key="bootloader_fastbootd_reboot_enabled"
-            android:title="FastbootD Transition"
-            android:summary="Restart directly into fastbootd user space from Shizuku shell"
+            android:title="FastbootD模式跳转"
+            android:summary="直接从Shizuku Shell重启进入用户空间FastbootD模式"
             android:icon="@drawable/ic_server_restart"
             android:defaultValue="false" />
 
