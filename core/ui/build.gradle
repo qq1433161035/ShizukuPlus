@@ -1,8 +1,8 @@
 plugins {
     id "com.android.library"
+    id "org.jetbrains.kotlin.android"                         // ← 加这行
     id "org.jetbrains.kotlin.plugin.compose" version "2.2.20"
 }
-
 android {
     namespace = "af.shizuku.core.ui"
     compileSdk = 35
