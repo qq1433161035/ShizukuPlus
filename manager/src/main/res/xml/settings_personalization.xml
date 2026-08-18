@@ -3,7 +3,7 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_color_theme"
-        android:title="Color &amp; Theme"
+        android:title="颜色与主题"
         android:defaultValue="true">
 
         <af.shizuku.manager.settings.IntegerSimpleMenuPreference
@@ -27,8 +27,8 @@
 
         <rikka.preference.SimpleMenuPreference
             android:key="custom_accent"
-            android:title="Custom Accent Color"
-            android:summary="Choose a color when Dynamic Color is off"
+            android:title="自定义强调色"
+            android:summary="动态色彩关闭时选择主题颜色"
             android:defaultValue="DEFAULT"
             android:entries="@array/custom_accents"
             android:entryValues="@array/custom_accents_values"
@@ -53,7 +53,7 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_shape_style"
-        android:title="Shape &amp; Icon Style"
+        android:title="圆角与图标样式"
         android:defaultValue="true">
 
         <SwitchPreferenceCompat
@@ -95,7 +95,7 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_motion"
-        android:title="Motion"
+        android:title="动画效果"
         android:defaultValue="true">
 
         <SwitchPreferenceCompat
@@ -140,7 +140,7 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_home_screen"
-        android:title="Home Screen"
+        android:title="主界面"
         android:defaultValue="true">
 
         <af.shizuku.manager.settings.HomeLayoutSimulatorPreference
@@ -187,7 +187,7 @@
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
         android:key="category_language"
-        android:title="Language"
+        android:title="语言"
         android:defaultValue="false">
 
         <rikka.preference.SimpleMenuPreference
