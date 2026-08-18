@@ -3,73 +3,73 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
-        android:title="Capabilities"
+        android:title="功能权限"
         app:collapsible="false">
 
         <af.shizuku.manager.settings.PlusNavPreference
             android:key="nav_shizuku_plus"
-            android:title="Feature Hub"
-            android:summary="Manage exclusive Plus capabilities"
+            android:title="功能中心"
+            android:summary="管理 Plus 专属能力"
             android:icon="@drawable/ic_bolt_24"
             android:fragment="af.shizuku.manager.settings.ShizukuPlusSettingsFragment" />
 
         <af.shizuku.manager.settings.PlusNavPreference
             android:key="nav_root_integration"
-            android:title="Root &amp; Compatibility"
-            android:summary="ADB connection, SU bridge, rootless integration, and stock Shizuku compatibility"
+            android:title="Root 与兼容性"
+            android:summary="ADB连接、SU桥接、无Root集成以及原版Shizuku兼容性"
             android:icon="@drawable/ic_shield_24"
             android:fragment="af.shizuku.manager.settings.RootIntegrationSettingsFragment" />
 
     </af.shizuku.manager.settings.CollapsiblePreferenceCategory>
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
-        android:title="Personalization"
+        android:title="个性化"
         app:collapsible="false">
 
         <Preference
             android:key="nav_personalization"
-            android:title="Appearance"
-            android:summary="Theme, shapes, icons, motion, home layout, and language"
+            android:title="外观设置"
+            android:summary="主题、圆角、图标、动画、主页布局与语言"
             android:icon="@drawable/ic_palette_24"
             android:fragment="af.shizuku.manager.settings.PersonalizationSettingsFragment" />
 
         <Preference
             android:key="nav_app_management"
-            android:title="App Interactions"
-            android:summary="Gestures, long-press actions, and install verification"
+            android:title="应用交互"
+            android:summary="手势、长按操作以及安装校验"
             android:icon="@drawable/ic_devices_24"
             android:fragment="af.shizuku.manager.settings.AppManagementSettingsFragment" />
 
     </af.shizuku.manager.settings.CollapsiblePreferenceCategory>
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
-        android:title="System"
+        android:title="系统"
         app:collapsible="false">
 
         <Preference
             android:key="nav_behavior"
-            android:title="Startup &amp; Behavior"
-            android:summary="Boot options, watchdog, network, and activity status"
+            android:title="启动与行为"
+            android:summary="开机选项、看门狗、网络与运行状态"
             android:icon="@drawable/ic_settings_suggest_24"
             android:fragment="af.shizuku.manager.settings.BehaviorSettingsFragment" />
 
         <Preference
             android:key="nav_advanced"
-            android:title="Advanced &amp; Diagnostics"
-            android:summary="Logs, ADB tools, and troubleshooting"
+            android:title="高级与诊断"
+            android:summary="日志、ADB工具以及故障排查"
             android:icon="@drawable/ic_terminal_24"
             android:fragment="af.shizuku.manager.settings.AdvancedSettingsFragment" />
 
     </af.shizuku.manager.settings.CollapsiblePreferenceCategory>
 
     <af.shizuku.manager.settings.CollapsiblePreferenceCategory
-        android:title="About"
+        android:title="关于"
         app:collapsible="false">
 
         <Preference
             android:key="nav_about"
-            android:title="About"
-            android:summary="Version, licenses, and updates"
+            android:title="关于"
+            android:summary="版本、开源许可与更新"
             android:icon="@drawable/ic_info_24"
             android:fragment="af.shizuku.manager.settings.AboutSettingsFragment" />
 
